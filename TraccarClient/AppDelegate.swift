@@ -16,7 +16,6 @@
 
 import UIKit
 import CoreData
-import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, PositionProviderDelegate {
@@ -35,9 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PositionProviderDelegate 
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
-        #if FIREBASE
-        FirebaseApp.configure()
-        #endif
 
         UIDevice.current.isBatteryMonitoringEnabled = true
 

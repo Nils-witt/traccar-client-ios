@@ -13,8 +13,6 @@
 		5E716A2B1F63A60800A2DBC3 /* ProtocolFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E716A2A1F63A60800A2DBC3 /* ProtocolFormatter.swift */; };
 		5E716A2E1F63A7A200A2DBC3 /* ProtocolFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E716A2D1F63A7A200A2DBC3 /* ProtocolFormatterTests.swift */; };
 		5E716A301F63A9F600A2DBC3 /* RequestManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E716A2F1F63A9F600A2DBC3 /* RequestManagerTests.swift */; };
-		5EE3CA342998948F002C86E4 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5EE3CA332998948F002C86E4 /* FirebaseAnalytics */; };
-		5EE3CA362998948F002C86E4 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5EE3CA352998948F002C86E4 /* FirebaseCrashlytics */; };
 		5EE3CA39299894B9002C86E4 /* InAppSettingsKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5EE3CA38299894B9002C86E4 /* InAppSettingsKit */; };
 		CB4197931F674A3E008F301C /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4197921F674A3E008F301C /* DatabaseHelper.swift */; };
 		CB4197951F675518008F301C /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4197941F675518008F301C /* CoreDataTests.swift */; };
@@ -133,11 +131,9 @@
 			files = (
 				CBDEEB8A1B8EB6A4006BC126 /* SystemConfiguration.framework in Frameworks */,
 				CBCE82EF1B8D253600A7318B /* CoreData.framework in Frameworks */,
-				5EE3CA342998948F002C86E4 /* FirebaseAnalytics in Frameworks */,
 				CEDB048717ED50C1000E7EDF /* CoreLocation.framework in Frameworks */,
 				CED4879917DB1DF4007FCF57 /* MessageUI.framework in Frameworks */,
 				CED4871C17DB1BF6007FCF57 /* UIKit.framework in Frameworks */,
-				5EE3CA362998948F002C86E4 /* FirebaseCrashlytics in Frameworks */,
 				5EE3CA39299894B9002C86E4 /* InAppSettingsKit in Frameworks */,
 				CED4871E17DB1BF6007FCF57 /* Foundation.framework in Frameworks */,
 				CED4872017DB1BF6007FCF57 /* CoreGraphics.framework in Frameworks */,
@@ -261,8 +257,6 @@
 			);
 			name = TraccarClient;
 			packageProductDependencies = (
-				5EE3CA332998948F002C86E4 /* FirebaseAnalytics */,
-				5EE3CA352998948F002C86E4 /* FirebaseCrashlytics */,
 				5EE3CA38299894B9002C86E4 /* InAppSettingsKit */,
 			);
 			productName = TraccarClient;
@@ -329,7 +323,6 @@
 			);
 			mainGroup = CED4870F17DB1BF6007FCF57;
 			packageReferences = (
-				5EE3CA322998948F002C86E4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				5EE3CA37299894B9002C86E4 /* XCRemoteSwiftPackageReference "InAppSettingsKit" */,
 			);
 			productRefGroup = CED4871917DB1BF6007FCF57 /* Products */;
@@ -862,14 +855,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5EE3CA322998948F002C86E4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.0.0;
-			};
-		};
 		5EE3CA37299894B9002C86E4 /* XCRemoteSwiftPackageReference "InAppSettingsKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/futuretap/InAppSettingsKit.git";
@@ -881,16 +866,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5EE3CA332998948F002C86E4 /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5EE3CA322998948F002C86E4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
-		5EE3CA352998948F002C86E4 /* FirebaseCrashlytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5EE3CA322998948F002C86E4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseCrashlytics;
-		};
 		5EE3CA38299894B9002C86E4 /* InAppSettingsKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5EE3CA37299894B9002C86E4 /* XCRemoteSwiftPackageReference "InAppSettingsKit" */;

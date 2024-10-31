@@ -16,6 +16,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, PositionProviderDelegate {
@@ -64,6 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PositionProviderDelegate 
             trackingController?.start()
         }
 
+        registerForPushNotifications()
         return true
     }
     
@@ -168,5 +170,57 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PositionProviderDelegate 
             userDefaults.removeObject(forKey: "secure_preference")
         }
     }
+    
+    
+    func registerForPushNotifications() {
 
+        UNUserNotificationCenter.current()
+            .requestAuthorization(options: [.alert, .sound, .badge]) { [weak self] granted, _ in
+                print("Permission granted: \(granted)")
+                guard granted else { return }
+                self?.getNotificationSettings()
+            }
+        }
+    
+    func getNotificationSettings() {
+        UNUserNotificationCenter.current().getNotificationSettings { settings in
+            print("Notification settings: \(settings)")
+            guard settings.authorizationStatus == .authorized else { return }
+            DispatchQueue.main.async {
+                UIApplication.shared.registerForRemoteNotifications()
+            }
+        }
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
+        let token = tokenParts.joined()
+        print("Device Token: \(token)")
+    }
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Failed to register: \(error)")
+    }
+    
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) async -> UIBackgroundFetchResult {
+        if UserDefaults.standard.bool(forKey: "remote_control") as? Bool == true {
+            if(userInfo["request-position"] as? Bool == true){
+                if let trackingController = AppDelegate.instance.trackingController {
+                    let positionProvider = trackingController.positionProvider
+                    positionProvider.directUpdate = true
+                }
+            }
+            
+            if let frequency = userInfo["frequency_preference"] as? Int {
+                UserDefaults.standard.set(frequency, forKey: "frequency_preference")
+                if let trackingController = AppDelegate.instance.trackingController {
+                    let positionProvider = trackingController.positionProvider
+                        positionProvider.interval = Double(frequency)
+                        positionProvider.stopUpdates()
+                        positionProvider.startUpdates()
+                }
+            }
+        }
+        return .newData
+    }
 }

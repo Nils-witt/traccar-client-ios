@@ -34,6 +34,7 @@ class PositionProvider: NSObject, CLLocationManagerDelegate {
     var angle: Double
     
     var pendingStart = false
+    var directUpdate: Bool = false
     
     override init() {
         let userDefaults = UserDefaults.standard
@@ -47,7 +48,7 @@ class PositionProvider: NSObject, CLLocationManagerDelegate {
         super.init()
 
         locationManager.delegate = self
-
+        
         locationManager.pausesLocationUpdatesAutomatically = false
         
         switch userDefaults.string(forKey: "accuracy_preference") ?? "medium" {
@@ -104,10 +105,12 @@ class PositionProvider: NSObject, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
-            if lastLocation == nil
+            if lastLocation == nil || directUpdate
                 || location.timestamp.timeIntervalSince(lastLocation!.timestamp) >= interval
                 || (distance > 0 && DistanceCalculator.distance(fromLat: location.coordinate.latitude, fromLon: location.coordinate.longitude, toLat: lastLocation!.coordinate.latitude, toLon: lastLocation!.coordinate.longitude) >= distance)
                 || (angle > 0 && fabs(location.course - lastLocation!.course) >= angle) {
+                
+                directUpdate = false
                 
                 let position = Position(managedObjectContext: DatabaseHelper().managedObjectContext)
                 position.deviceId = deviceId

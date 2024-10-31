@@ -99,7 +99,7 @@
 		CE4B810A1EC71D4800D1C41D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MainStoryboard.strings; sourceTree = "<group>"; };
 		CE4B810B1EC71D4800D1C41D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE5899C71B115C9100ED70D2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		CED4871817DB1BF6007FCF57 /* TraccarClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TraccarClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CED4871817DB1BF6007FCF57 /* RK TraccarClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RK TraccarClient.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED4871B17DB1BF6007FCF57 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CED4871D17DB1BF6007FCF57 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CED4871F17DB1BF6007FCF57 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -164,7 +164,7 @@
 		CED4871917DB1BF6007FCF57 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CED4871817DB1BF6007FCF57 /* TraccarClient.app */,
+				CED4871817DB1BF6007FCF57 /* RK TraccarClient.app */,
 				CEE286CE1B80839700AE7E83 /* TraccarClientTests.xctest */,
 			);
 			name = Products;
@@ -243,9 +243,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CED4871717DB1BF6007FCF57 /* TraccarClient */ = {
+		CED4871717DB1BF6007FCF57 /* RK TraccarClient */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CED4873E17DB1BF6007FCF57 /* Build configuration list for PBXNativeTarget "TraccarClient" */;
+			buildConfigurationList = CED4873E17DB1BF6007FCF57 /* Build configuration list for PBXNativeTarget "RK TraccarClient" */;
 			buildPhases = (
 				CED4871417DB1BF6007FCF57 /* Sources */,
 				CED4871517DB1BF6007FCF57 /* Frameworks */,
@@ -257,12 +257,12 @@
 			);
 			dependencies = (
 			);
-			name = TraccarClient;
+			name = "RK TraccarClient";
 			packageProductDependencies = (
 				5EE3CA38299894B9002C86E4 /* InAppSettingsKit */,
 			);
 			productName = TraccarClient;
-			productReference = CED4871817DB1BF6007FCF57 /* TraccarClient.app */;
+			productReference = CED4871817DB1BF6007FCF57 /* RK TraccarClient.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CEE286CD1B80839600AE7E83 /* TraccarClientTests */ = {
@@ -330,7 +330,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CED4871717DB1BF6007FCF57 /* TraccarClient */,
+				CED4871717DB1BF6007FCF57 /* RK TraccarClient */,
 				CEE286CD1B80839600AE7E83 /* TraccarClientTests */,
 			);
 		};
@@ -413,7 +413,7 @@
 /* Begin PBXTargetDependency section */
 		CEE286D51B80839700AE7E83 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CED4871717DB1BF6007FCF57 /* TraccarClient */;
+			target = CED4871717DB1BF6007FCF57 /* RK TraccarClient */;
 			targetProxy = CEE286D41B80839700AE7E83 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -527,6 +527,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TraccarClient/TraccarClient-Prefix.pch";
 				INFOPLIST_FILE = "TraccarClient/TraccarClient-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "RK Traccar Client";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -697,6 +698,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TraccarClient/TraccarClient-Prefix.pch";
 				INFOPLIST_FILE = "TraccarClient/TraccarClient-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "RK Traccar Client";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -730,6 +732,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TraccarClient/TraccarClient-Prefix.pch";
 				INFOPLIST_FILE = "TraccarClient/TraccarClient-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "RK Traccar Client";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -836,7 +839,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CED4873E17DB1BF6007FCF57 /* Build configuration list for PBXNativeTarget "TraccarClient" */ = {
+		CED4873E17DB1BF6007FCF57 /* Build configuration list for PBXNativeTarget "RK TraccarClient" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CED4873F17DB1BF6007FCF57 /* Debug */,
